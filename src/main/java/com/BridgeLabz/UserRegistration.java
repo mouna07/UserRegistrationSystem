@@ -10,6 +10,8 @@ public class UserRegistration {
             System.out.println("**********welcome to the user registration problem**********");
             System.out.println("enter the first name");
             User.ValidateName();
+            System.out.println("enter the Last name");
+            User.ValidateName();
     }
     public void ValidateName(){
         Scanner sc = new Scanner(System.in);
