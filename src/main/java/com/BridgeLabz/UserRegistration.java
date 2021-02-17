@@ -1,54 +1,76 @@
 package com.BridgeLabz;
 
-import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
-    public static void main(String args[]) {
-            UserRegistration User = new UserRegistration();
-            Scanner scanner = new Scanner(System.in);
-            System.out.println("**********welcome to the user registration problem**********");
-            System.out.println("enter the first name:");
-            User.ValidateName(scanner.next());
-            System.out.println("enter the Last name:");
-            User.ValidateName(scanner.next());
-            System.out.println("Enter the valid email id:");
-            User.ValidateEmail(scanner.next());
-            System.out.println("Enter the valid phone number:");
-            User.ValidatePhoneNo(scanner.next());
-    }
-    public void ValidateName( String name){
 
-        if (Pattern.matches("[A-Z][a-z]{2}[a-z]*", name)) {
-            System.out.println("Valid  Name");
-        } else {
-            System.out.println("Invalid  Name");
+    public static String UC1(String firstNameUserInput) {
+        Pattern firstName = Pattern.compile("[A-Z]{1}[a-z]{2,}$");
+        Matcher match = firstName.matcher(firstNameUserInput);
+        boolean patternValidity = match.matches();
+        if (patternValidity == true) {
+            return "HAPPY";
+        }
+        else {
+            return "SAD";
         }
     }
-    public String ValidateEmail(String email){
 
-        if (Pattern.matches("^[a-zA-Z0-9_+&*-]+(?:\\\\.\" + \"[a-zA-Z0-9_+&*-]+)*@\" + \"(?:[a-zA-Z0-9-]+\\\\.)+[a-z\" + \"A-Z]{2,7}$", email)) {
-            System.out.println("Valid EmailId");
-        } else {
-            System.out.println("Invalid  EmailId");
+    public static String UC2(String lastNameUserInput) {
+        Pattern lastName = Pattern.compile("[A-Z]{1}[a-z]{2,}$");
+        Matcher match = lastName.matcher(lastNameUserInput);
+        boolean patternValidity = match.matches();
+        if (patternValidity == true) {
+            return "HAPPY";
         }
-        return email;
-    }
-    public void ValidatePhoneNo(String Number){
-
-        if (Pattern.matches("(([0-9]{2})?)[ ][0-9]{10}", Number)) {
-            System.out.println("Valid Phone Number");
-        } else {
-            System.out.println("Invalid Phone Number");
+        else {
+            return "SAD";
         }
     }
-    public void ValidatePassword(String password){
 
-        if (Pattern.matches("((^(?=.*[A-Z]))(?=.*[0-9])(?=.*[a-z])(?=.*[@*&^%#-*+!]{1}).{8,}$)", password)) {
-            System.out.println("Valid Password");
-        } else {
-            System.out.println("Invalid Password");
+    public static String UC3(String emailUserInput) {
+        Pattern email = Pattern.compile("^[a-zA-Z]{3}\\.[a-zA-Z]{1,}@[a-zA-Z]{2}\\.[a-zA-Z]{2}\\.[a-zA-Z]{1,}$");
+        Matcher match = email.matcher(emailUserInput);
+        boolean patternValidity = match.matches();
+        if (patternValidity == true) {
+            return "HAPPY";
         }
+        else {
+            return "SAD";
+        }
+    }
+
+    public String UC4(String mobileUserInput) {
+        Pattern mobileNumber = Pattern.compile("^[1-9]{2}\\s{1}[0-9]{1}[0-9]{9}$");
+        Matcher match = mobileNumber.matcher(mobileUserInput);
+        boolean patternValidity = match.matches();
+        if (patternValidity == true) {
+            return "HAPPY";
+        }
+        else {
+            return "SAD";
+        }
+    }
+
+    public static String UC5toUC8(String passwordUserInput) {
+        Pattern password = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}");
+        Matcher match = password.matcher(passwordUserInput);
+        boolean patternValidity = match.matches();
+        if (patternValidity == true) {
+            return "HAPPY";
+        }
+        else {
+            return "SAD";
+        }
+    }
+
+    public static boolean UC9(String sampleEmailValidation) {
+        Pattern emailValidation = Pattern.compile("^([a-zA-a0-9\\.\\-\\+]+)@([a-zA-Z0-9\\.]{1,5})([a-zA-Z\\.]+){1,3}([a-zA-Z]{1,3})$");
+        Matcher match = emailValidation.matcher(sampleEmailValidation);
+        boolean patternValidity = match.matches();
+        return patternValidity;
     }
 
 }

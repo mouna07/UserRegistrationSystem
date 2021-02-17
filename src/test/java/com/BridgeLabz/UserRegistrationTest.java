@@ -1,64 +1,91 @@
 package com.BridgeLabz;
 
-import org.junit.Assert;
+
 import org.junit.Test;
 import static org.junit.Assert.*;
 import java.util.Scanner;
 
-public class UserRegistrationTest {
-    UserRegistration userRegistration = new UserRegistration();
-    @Test
-    public void validateEmail(){
-        String testValidString1 = userRegistration.ValidateEmail("abc@yahoo.com");
-        String testValidString2 = userRegistration.ValidateEmail("abc-100@yahoo.com");
-        String testValidString3 = userRegistration.ValidateEmail("abc.100@yahoo.com");
-        String testValidString4 = userRegistration.ValidateEmail("abc111@abc.com");
-        String testValidString5 = userRegistration.ValidateEmail("abc-100@abc.net");
-        String testValidString6 = userRegistration.ValidateEmail("abc.100@abc.com.au");
-        String testValidString7 = userRegistration.ValidateEmail("abc@1.com");
-        String testValidString8 = userRegistration.ValidateEmail("abc@gmail.com.com");
-        String testValidString9 = userRegistration.ValidateEmail("abc+100@gmail.com");
+public class UserRegistrationGradleTest {
 
-        String testInvalidString1 = userRegistration.ValidateEmail("abc");
-        String testInvalidString2 = userRegistration.ValidateEmail("abc@.com.my");
-        String testInvalidString3 = userRegistration.ValidateEmail("abc123@gmail.a");
-        String testInvalidString4 = userRegistration.ValidateEmail("abc123@.com");
-        String testInvalidString5 = userRegistration.ValidateEmail("abc123@.com.com");
-        String testInvalidString6 = userRegistration.ValidateEmail(".abc@abc.com");
-        String testInvalidString7 = userRegistration.ValidateEmail("abc()*@gmail.com");
-        String testInvalidString8 = userRegistration.ValidateEmail("abc@%*.com");
-        String testInvalidString9 = userRegistration.ValidateEmail("abc..2002@gmail.com");
-        String testInvalidString10 = userRegistration.ValidateEmail("abc.@gmail.com");
-        String testInvalidString11 = userRegistration.ValidateEmail("abc@abc@gmail.com");
-        String testInvalidString12 = userRegistration.ValidateEmail("abc@gmail.com.1a");
+    static String Happy = null;
 
-        Assert.assertEquals("InValid",testValidString1);
-        Assert.assertEquals("Valid",testValidString2);
-        Assert.assertEquals("Valid",testValidString3);
-        Assert.assertEquals("Valid",testValidString4);
-        Assert.assertEquals("Valid",testValidString5);
-        Assert.assertEquals("Valid",testValidString6);
-        Assert.assertEquals("Valid",testValidString7);
-        Assert.assertEquals("Valid",testValidString8);
-        Assert.assertEquals("Valid",testValidString9);
-
-        Assert.assertEquals("Invalid",testInvalidString1);
-        Assert.assertEquals("Invalid",testInvalidString2);
-        Assert.assertEquals("Invalid",testInvalidString2);
-        Assert.assertEquals("Invalid",testInvalidString3);
-        Assert.assertEquals("Invalid",testInvalidString4);
-        Assert.assertEquals("Invalid",testInvalidString5);
-        Assert.assertEquals("Invalid",testInvalidString6);
-        Assert.assertEquals("Invalid",testInvalidString7);
-        Assert.assertEquals("Invalid",testInvalidString8);
-        Assert.assertEquals("Invalid",testInvalidString9);
-        Assert.assertEquals("Invalid",testInvalidString10);
-        Assert.assertEquals("Invalid",testInvalidString11);
-        Assert.assertEquals("Invalid",testInvalidString12);
+    public static void UC1() {
+        UserRegistration userRegistration = new UserRegistration();
+        String firstNameUserInput = userRegistration.UC1("Komal");
+        //Assert Statement
+        assertEquals(Happy, firstNameUserInput);
     }
 
+    public static void UC2() {
+        UserRegistration userRegistration = new UserRegistration();
+        String lastNameUserInput = userRegistration.UC2("Shinde");
+        //Assert Statement
+        assertEquals(Happy, "lastNameUserInput");
+    }
 
+    public static void UC3() {
+        UserRegistration userRegistration = new UserRegistration();
+        String emailUserInput = userRegistration.UC3("abc.xyz@bl.co.in");
+        //Assert Statement
+        assertEquals(Happy, "emailUserInput");
+    }
+
+    public static void UC4() {
+        UserRegistration userRegistration = new UserRegistration();
+        String mobileUserInput = userRegistration.UC4("91 8562416354");
+        //Assert Statement
+        assertEquals(Happy, "mobileUserInput");
+    }
+
+    public static void UC5PasswordRule1() {
+        UserRegistration userRegistration = new UserRegistration();
+        String passwordUserInput = userRegistration.UC5toUC8("Komal");
+        //Assert Statement
+        assertEquals(Happy, "passwordUserInput");
+    }
+
+    public static void UC6PasswordRule2() {
+        UserRegistration userRegistration = new UserRegistration();
+        String passwordUserInput = userRegistration.UC5toUC8("Komal");
+        //Assert Statement
+        assertEquals(Happy, "passwordUserInput");
+    }
+
+    public static void UC7PasswordRule3() {
+        UserRegistration userRegistration = new UserRegistration();
+        String passwordUserInput = userRegistration.UC5toUC8("Komal");
+        //Assert Statement
+        assertEquals(Happy, "passwordUserInput");
+    }
+
+    public static void UC8PasswordRule4() {
+        UserRegistration userRegistration = new UserRegistration();
+        String passwordUserInput = userRegistration.UC5toUC8("Komal");
+        //Assert Statement
+        assertEquals(Happy, "passwordUserInput");
+    }
+
+    public static void UC9() {
+        UserRegistration userRegistration = new UserRegistration();
+        boolean sampleEmailValidation1 = userRegistration.UC9("abc@yahoo.com");
+        boolean sampleEmailValidation2 = userRegistration.UC9("abc-100@yahoo.com");
+        boolean sampleEmailValidation3 = userRegistration.UC9("abc.100@yahoo.com");
+        boolean sampleEmailValidation4 = userRegistration.UC9("abc111@abc.com");
+        boolean sampleEmailValidation5 = userRegistration.UC9("abc-100@abc.net");
+        boolean sampleEmailValidation6 = userRegistration.UC9("abc.100@abc.com.au");
+        boolean sampleEmailValidation7 = userRegistration.UC9("abc@1.com");
+        boolean sampleEmailValidation8 = userRegistration.UC9("abc@gmail.com.com");
+        boolean sampleEmailValidation9 = userRegistration.UC9("abc+100@gmail.com");
+        //Assert Statement
+        assertEquals(true, "sampleEmailValidation1");
+        assertEquals(true, "sampleEmailValidation2");
+        assertEquals(true, "sampleEmailValidation3");
+        assertEquals(true, "sampleEmailValidation4");
+        assertEquals(true, "sampleEmailValidation5");
+        assertEquals(true, "sampleEmailValidation6");
+        assertEquals(true, "sampleEmailValidation7");
+        assertEquals(true, "sampleEmailValidation8");
+        assertEquals(true, "sampleEmailValidation9");
+    }
 
 }
-
-
