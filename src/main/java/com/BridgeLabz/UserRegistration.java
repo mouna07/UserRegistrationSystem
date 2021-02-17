@@ -14,6 +14,8 @@ public class UserRegistration {
             User.ValidateName();
             System.out.println("Enter the valid email id:");
             User.ValidateEmail();
+            System.out.println("Enter the valid phone number:");
+            User.ValidatePhoneNo();
     }
     public void ValidateName(){
         Scanner sc = new Scanner(System.in);
@@ -27,10 +29,19 @@ public class UserRegistration {
     public void ValidateEmail(){
         Scanner sc = new Scanner(System.in);
         String Email = sc.next();
-        if (Pattern.matches("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", Email)) {
+        if (Pattern.matches("[a-zA-Z]+([._+-]{0,1}[a-zA-Z0-9]+)*@[a-zA-Z0-9]+.[a-zA-Z]{2,4}+(?:\\\\.[a-z]{2,}){0,1}$)", Email)) {
             System.out.println("Valid EmailId");
         } else {
             System.out.println("Invalid  EmailId");
+        }
+    }
+    public void ValidatePhoneNo(){
+        Scanner sc = new Scanner(System.in);
+        String Number = sc.next();
+        if (Pattern.matches("(([0-9]{2})?)[ ][0-9]{10}", Number)) {
+            System.out.println("Valid Phone Number");
+        } else {
+            System.out.println("Invalid Phone Number");
         }
     }
 
