@@ -47,7 +47,7 @@ public class UserRegistration {
     public void ValidatePassword(){
         Scanner sc = new Scanner(System.in);
         String password = sc.next();
-        if (Pattern.matches(".{8,}", password)) {
+        if (Pattern.matches("(?=.*[A-Z])(?=.*[0-9])(.{6,})", password)) {
             System.out.println("Valid Password");
         } else {
             System.out.println("Invalid Password");
