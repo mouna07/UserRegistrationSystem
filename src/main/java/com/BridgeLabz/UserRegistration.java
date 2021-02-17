@@ -1,10 +1,13 @@
 package com.BridgeLabz;
 
-import java.util.regex.Matcher;
+
+import java.util.Scanner;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserRegistration {
+
 
     public static String UC1(String firstNameUserInput) {
         Pattern firstName = Pattern.compile("[A-Z]{1}[a-z]{2,}$");
@@ -27,8 +30,6 @@ public class UserRegistration {
         }
         else {
             return "SAD";
-        }
-    }
 
     public static String UC3(String emailUserInput) {
         Pattern email = Pattern.compile("^[a-zA-Z]{3}\\.[a-zA-Z]{1,}@[a-zA-Z]{2}\\.[a-zA-Z]{2}\\.[a-zA-Z]{1,}$");
@@ -51,8 +52,6 @@ public class UserRegistration {
         }
         else {
             return "SAD";
-        }
-    }
 
     public static String UC5toUC8(String passwordUserInput) {
         Pattern password = Pattern.compile("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,}");
@@ -63,8 +62,8 @@ public class UserRegistration {
         }
         else {
             return "SAD";
-        }
-    }
+
+
 
     public static boolean UC9(String sampleEmailValidation) {
         Pattern emailValidation = Pattern.compile("^([a-zA-a0-9\\.\\-\\+]+)@([a-zA-Z0-9\\.]{1,5})([a-zA-Z\\.]+){1,3}([a-zA-Z]{1,3})$");
@@ -72,5 +71,6 @@ public class UserRegistration {
         boolean patternValidity = match.matches();
         return patternValidity;
     }
+
 
 }
