@@ -44,5 +44,14 @@ public class UserRegistration {
             System.out.println("Invalid Phone Number");
         }
     }
+    public void ValidatePassword(){
+        Scanner sc = new Scanner(System.in);
+        String password = sc.next();
+        if (Pattern.matches(".{8,}", password)) {
+            System.out.println("Valid Password");
+        } else {
+            System.out.println("Invalid Password");
+        }
+    }
 
 }
