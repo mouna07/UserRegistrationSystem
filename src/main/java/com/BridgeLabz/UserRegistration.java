@@ -8,10 +8,12 @@ public class UserRegistration {
             UserRegistration User = new UserRegistration();
 
             System.out.println("**********welcome to the user registration problem**********");
-            System.out.println("enter the first name");
+            System.out.println("enter the first name:");
             User.ValidateName();
-            System.out.println("enter the Last name");
+            System.out.println("enter the Last name:");
             User.ValidateName();
+            System.out.println("Enter the valid email id:");
+            User.ValidateEmail();
     }
     public void ValidateName(){
         Scanner sc = new Scanner(System.in);
@@ -22,4 +24,14 @@ public class UserRegistration {
             System.out.println("Invalid  Name");
         }
     }
+    public void ValidateEmail(){
+        Scanner sc = new Scanner(System.in);
+        String Email = sc.next();
+        if (Pattern.matches("^[a-zA-Z0-9+_.-]+@[a-zA-Z0-9.-]+$", Email)) {
+            System.out.println("Valid EmailId");
+        } else {
+            System.out.println("Invalid  EmailId");
+        }
+    }
+
 }
