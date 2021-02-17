@@ -1,9 +1,10 @@
 package com.BridgeLabz;
 
 
+
+import org.junit.Assert;
 import org.junit.Test;
-import static org.junit.Assert.*;
-import java.util.Scanner;
+
 
 class UserRegistrationeTest {
 
@@ -53,6 +54,7 @@ class UserRegistrationeTest {
         }
     }
 
+
     public static void UC5PasswordRule1() throws UserRegistrationException {
         UserRegistration userRegistrationGradle = new UserRegistration();
         String passwordUserInput = userRegistrationGradle.UC5toUC8("Komal");
@@ -73,7 +75,6 @@ class UserRegistrationeTest {
             //Assert Statement
             assertEquals("Please enter valid password", e.getMessage());
         }
-    }
 
     public static void UC7PasswordRule3() throws UserRegistrationException {
         UserRegistration userRegistrationGradle = new UserRegistration();
@@ -95,7 +96,9 @@ class UserRegistrationeTest {
             //Assert Statement
             assertEquals("Please enter valid password", e.getMessage());
         }
-    }
+
+
+
 
     public static void UC9() {
         UserRegistration userRegistrationGradle = new UserRegistration();
@@ -119,5 +122,9 @@ class UserRegistrationeTest {
         assertEquals(true, "sampleEmailValidation8");
         assertEquals(true, "sampleEmailValidation9");
     }
+}
+
+
+
 }
 
